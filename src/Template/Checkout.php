@@ -11,8 +11,6 @@ class Checkout extends Layout
 {
     protected function renderPage(Context $context): string
     {
-        $content = $this->header->render($context);
-
         // @codingStandardsIgnoreStart
         return <<<HTML
                 <form method="post" accept-charset="utf-8" action="checkout" class="form" novalidate="novalidate">
@@ -29,12 +27,20 @@ class Checkout extends Layout
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Product Thumbnail</td>
+                                        <td>
+                                            <img src="./../../highres-assets/product.jpg" alt="product image" class="checkout-image" />
+                                        </td>
                                         <td>Lorem Widget</td>
                                         <td>1</td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                    <div class="frame">
+                        <div class="frame__contents text-justify">
+                            <i class="fa-solid fa-check"></i>
+                            <i>With our “Rise & Shine” beta program, you get early access to new features, but they may not always work perfectly. You can change your beta preference at any time after you join.</i>
                         </div>
                     </div>
                     <div class="frame">
@@ -85,9 +91,13 @@ class Checkout extends Layout
                             <div class="form-field form-field--required">
                                 <label class="form-field__label" for="billing_address_line1">Street Address: <span class="form-field__label-required"> (required)</span></label>
                                 <div class="form-field__contents">
-                                    <div class="textarea__container">
-                                        <textarea name="billing_address_line1" id="billing_address_line1" class="textarea" rows="2" cols="35"></textarea>
-                                    </div>
+                                    <input type="text" name="billing_address_line1" id="billing_address_line1" class="entry" value="" size="17" maxlength="255" />
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-field__label" for="billing_address_line2">Apt, suite, etc. (optionnal): </label>
+                                <div class="form-field__contents">
+                                    <input type="text" name="billing_address_line2" id="billing_address_line2" class="entry" value="" size="17" maxlength="255" />
                                 </div>
                             </div>
                             <div class="form-field form-field--required">
@@ -102,6 +112,11 @@ class Checkout extends Layout
                                     <input type="text" name="billing_address_postalcode" id="billing_address_postalcode" class="entry entry--postal-code" value="" size="10" maxlength="50" />
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="submit-button">
+                        <div class="text-center">
+                            <button type="submit" class="btn">Place order</button>
                         </div>
                     </div>
                 </form>

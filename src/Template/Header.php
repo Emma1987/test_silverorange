@@ -26,6 +26,7 @@ class Header implements Template
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <script src="https://kit.fontawesome.com/3b4aa6d2e8.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header class="header"></header>
