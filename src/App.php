@@ -47,6 +47,12 @@ class App
             $controller = new Controller\PostDetails($this->db, $params);
         } elseif (preg_match('@^/checkout/?$@', $path) === 1) {
             $controller = new Controller\Checkout($this->db, []);
+        } elseif (preg_match('@^/import/?$@', $path) === 1) {
+            $controller = new Controller\ImporterForm($this->db, []);
+        } elseif (preg_match('@^/import-action/?$@', $path) === 1) {
+            if (!empty($_FILES['files'])) {
+                $controller = new Controller\ImporterAction($this->db, $_FILES['files']);
+            }
         }
 
         return $controller;
