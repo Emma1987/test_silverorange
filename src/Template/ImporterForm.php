@@ -10,7 +10,7 @@ class ImporterForm extends Layout
     {
         // @codingStandardsIgnoreStart
         return <<<HTML
-            <form method="post" action="import-action/" enctype="multipart/form-data">
+            <form method="post" action="/import-action/" enctype="multipart/form-data">
                 <div class="frame">
                     <h2 class="frame__title">Import a list of post files</h2>
                     <div class="frame__contents">
