@@ -9,4 +9,7 @@ class Context
     public string $title = '';
 
     public string $content = '';
+
+    public string $errorMessage = '';
+    public string $successMessage = '';
 }
